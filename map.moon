@@ -23,3 +23,11 @@ class Map
 
   get_map: =>
     return @map, @width, @height
+
+  get_dimensions: =>
+    return @width, @height
+
+  is_free: (point) =>
+    if @map[point.x][point.y] == 1
+      return false
+    return true

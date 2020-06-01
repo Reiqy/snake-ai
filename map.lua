@@ -20,6 +20,15 @@ do
     end,
     get_map = function(self)
       return self.map, self.width, self.height
+    end,
+    get_dimensions = function(self)
+      return self.width, self.height
+    end,
+    is_free = function(self, point)
+      if self.map[point.x][point.y] == 1 then
+        return false
+      end
+      return true
     end
   }
   _base_0.__index = _base_0

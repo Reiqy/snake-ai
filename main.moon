@@ -1,21 +1,13 @@
-Map = require("map")
-Renderer = require("renderer")
-Snake = require("snake")
+Game = require("game")
 
-helper = require("helper")
-
-local map, renderer, snake
+local game
 
 love.load = (args) ->
-  renderer = Renderer(30)
-
-  mapImageData = helper.load_map_data("maps/basic_map.png")
-
-  map = Map(mapImageData)
-
-  renderer\set_map(map)
+  game = Game(0.1)
+  game\start(true)
 
 love.update = (dt) ->
+  game\update(dt)
 
 love.draw = ->
-  renderer\draw()
+  game\draw()
